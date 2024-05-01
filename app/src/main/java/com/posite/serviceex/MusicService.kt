@@ -7,7 +7,14 @@ import android.os.IBinder
 import android.util.Log
 
 class MusicService : Service() {
-    override fun onBind(intent: Intent?): IBinder? = null
+    private val binder = MusicServiceBinder()
+    override fun onBind(intent: Intent?): IBinder? {
+        player = MediaPlayer.create(this, R.raw.cherryblossom)
+        player.isLooping = true
+        player.start()
+        return binder
+    }
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.d("MusicService", "onStartCommand")
         player = MediaPlayer.create(this, R.raw.cherryblossom)
@@ -26,6 +33,26 @@ class MusicService : Service() {
         player.stop()
         player.release()
         super.onDestroy()
+    }
+
+    inner class MusicServiceBinder : android.os.Binder() {
+        fun getService(): MusicService {
+            Log.d("MusicService", "getService")
+            return this@MusicService
+        }
+    }
+
+    fun bindServiceFun(): String {
+        Log.d("MusicService", "bindServiceFun")
+        return "MusicService bindServiceFun"
+    }
+
+    fun pauseMusic() {
+        player.pause()
+    }
+
+    fun resumeMusic() {
+        player.start()
     }
 
     companion object {
