@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ServiceEx"
-        tools:targetApi="31">
+        tools:targetApi="34">
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,12 +23,31 @@
         </activity>
 
         <service
-            android:name=".MusicService"
+            android:name=".service.MusicService"
             android:exported="false">
             <!--<intent-filter>
                 <action android:name="com.example.serviceex.MusicService" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
+        </service>
+
+        <activity
+            android:name=".MessengerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <service
+            android:name=".service.MessengerService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ACTION_OUTER_SERVICE" />
+            </intent-filter>
         </service>
     </application>
 

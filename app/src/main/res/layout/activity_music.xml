@@ -4,31 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".MainActivity">
 
     <ImageButton
         android:id="@+id/music_btn"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/play"
         android:scaleType="fitXY"
+        android:src="@drawable/play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:layout_marginTop="16dp"
         android:id="@+id/bind_fun_btn"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:scaleType="fitXY"
-        app:layout_constraintTop_toBottomOf="@id/music_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/musical_note" />
+        android:scaleType="fitXY"
+        android:src="@drawable/musical_note"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/music_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

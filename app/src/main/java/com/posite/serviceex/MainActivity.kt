@@ -8,6 +8,7 @@ import android.os.IBinder
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.posite.serviceex.databinding.ActivityMusicBinding
+import com.posite.serviceex.service.MusicService
 
 class MainActivity : AppCompatActivity() {
     private lateinit var musicServiceIntent: Intent

@@ -1,10 +1,11 @@
-package com.posite.serviceex
+package com.posite.serviceex.service
 
 import android.app.Service
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.IBinder
 import android.util.Log
+import com.posite.serviceex.R
 
 class MusicService : Service() {
     private val binder = MusicServiceBinder()
