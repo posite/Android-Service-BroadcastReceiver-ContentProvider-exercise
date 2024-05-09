@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ServiceEx"
 include(":app")
+include(":app:mp3service")
+include(":app:outer")

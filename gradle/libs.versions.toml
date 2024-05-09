@@ -8,6 +8,7 @@ constraintlayout = "2.1.4"
 junit = "4.13.2"
 androix-test-ext = "1.1.5"
 espresso = "3.5.1"
+activity = "1.9.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -17,6 +18,7 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androix-test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "androix-test-ext" }
 esspresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
