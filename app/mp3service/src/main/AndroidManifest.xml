@@ -2,10 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.posite.mp3service">
 
-    <!--outer의 package 접근가능하게 함-->
+    <!-- outer의 package 접근가능하게 함 -->
     <queries>
         <package android:name="com.posite.outer" />
     </queries>
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +16,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ServiceEx">
+        <service
+            android:name=".MyJobService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+
+        </service>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

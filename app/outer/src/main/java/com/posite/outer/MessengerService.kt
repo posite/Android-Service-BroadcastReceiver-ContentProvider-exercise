@@ -46,6 +46,21 @@ class MessengerService : Service() {
                     }
                 }
 
+                2 -> {
+                    try {
+                        val replyMsg = Message()
+                        replyMsg.what = 0
+                        val replyBundle = Bundle()
+                        replyBundle.putInt("duration", player.duration)
+                        replyMsg.obj = replyBundle
+                        replyMessenger.send(replyMsg)
+
+                        player.start()
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                }
+
                 else -> super.handleMessage(msg)
             }
         }
