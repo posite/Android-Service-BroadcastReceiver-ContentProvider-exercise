@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BroadcastReceiverEx</string>
+    <string name="remain_battery">"%d%%"</string>
+    <string name="remain_battery_float">"%f%%"</string>
+    <string name="remain_battery_title">"현재 배터리: "</string>
+    <string name="charging_mode_title">"충전 방식: "</string>
+</resources>
