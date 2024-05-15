@@ -2,10 +2,15 @@ package com.posite.broadcastreceiverex
 
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.PackageManager
 import android.os.BatteryManager
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.posite.broadcastreceiverex.databinding.ActivityBatteryBinding
 
 class BatteryActivity : AppCompatActivity() {
@@ -14,6 +19,21 @@ class BatteryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+        if (ContextCompat.checkSelfPermission(
+                this,
+                android.Manifest.permission.POST_NOTIFICATIONS
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            Log.d("권한", "권한 없음")
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(android.Manifest.permission.POST_NOTIFICATIONS),
+                    1001
+                )
+            }
+        }
+
         registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))?.apply {
             when (getIntExtra(BatteryManager.EXTRA_STATUS, -1)) {
                 BatteryManager.BATTERY_STATUS_CHARGING -> {
@@ -49,6 +69,17 @@ class BatteryActivity : AppCompatActivity() {
         binding.broadcastButton.setOnClickListener {
             val intent = Intent(this, ChargerReceiver::class.java)
             sendBroadcast(intent)
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 1001) {
+            binding.broadcastButton.isEnabled = true
         }
     }
 }
