@@ -18,7 +18,7 @@
         android:theme="@style/Theme.BroadcastReceiverEx"
         tools:targetApi="31">
         <activity
-            android:name=".CallHistoryActivity"
+            android:name=".call.CallHistoryActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,16 +27,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BatteryActivity"
+            android:name=".battery.BatteryActivity"
             android:exported="true" />
 
         <receiver
-            android:name=".ChargerReceiver"
+            android:name=".battery.ChargerReceiver"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".battery.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,7 +45,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ContactsActivity"
+            android:name=".contact.ContactsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".gallery.GalleryActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

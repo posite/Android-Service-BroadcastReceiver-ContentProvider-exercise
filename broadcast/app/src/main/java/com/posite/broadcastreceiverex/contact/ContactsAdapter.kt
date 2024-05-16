@@ -1,4 +1,4 @@
-package com.posite.broadcastreceiverex
+package com.posite.broadcastreceiverex.contact
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -19,7 +19,7 @@ class ContactsAdapter : ListAdapter<Contacts, ContactsAdapter.ContactsViewHolder
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ContactsAdapter.ContactsViewHolder {
+    ): ContactsViewHolder {
         return ContactsViewHolder(
             ItemContactBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -29,7 +29,7 @@ class ContactsAdapter : ListAdapter<Contacts, ContactsAdapter.ContactsViewHolder
         )
     }
 
-    override fun onBindViewHolder(holder: ContactsAdapter.ContactsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ContactsViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 

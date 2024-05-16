@@ -1,4 +1,4 @@
-package com.posite.broadcastreceiverex
+package com.posite.broadcastreceiverex.contact
 
 import android.content.Intent
 import android.content.pm.PackageManager

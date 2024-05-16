@@ -1,4 +1,4 @@
-package com.posite.broadcastreceiverex
+package com.posite.broadcastreceiverex.call
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.posite.broadcastreceiverex.databinding.ItemCallhistoryBinding
 
 class CallHistoryAdapter :
-    ListAdapter<CallHistory, CallHistoryAdapter.CallHistoryViewHolder>(CallHistoryAdapter.diff) {
+    ListAdapter<CallHistory, CallHistoryAdapter.CallHistoryViewHolder>(diff) {
     inner class CallHistoryViewHolder(private val binding: ItemCallhistoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(callHistory: CallHistory) {
@@ -22,7 +22,7 @@ class CallHistoryAdapter :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CallHistoryAdapter.CallHistoryViewHolder {
+    ): CallHistoryViewHolder {
         return CallHistoryViewHolder(
             ItemCallhistoryBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -32,7 +32,7 @@ class CallHistoryAdapter :
         )
     }
 
-    override fun onBindViewHolder(holder: CallHistoryAdapter.CallHistoryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CallHistoryViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 

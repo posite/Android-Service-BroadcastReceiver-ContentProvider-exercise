@@ -1,4 +1,4 @@
-package com.posite.broadcastreceiverex
+package com.posite.broadcastreceiverex.battery
 
 import android.app.NotificationChannel
 import android.app.NotificationManager

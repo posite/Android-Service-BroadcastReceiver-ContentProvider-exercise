@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="16dp"
     android:paddingTop="24dp"
-    tools:context=".CallHistoryActivity">
+    tools:context=".call.CallHistoryActivity">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/call_history_btn"

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="16dp"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".battery.MainActivity">
 
     <ImageView
         android:id="@+id/battery_image"
